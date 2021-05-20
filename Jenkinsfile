@@ -3,19 +3,23 @@ pipeline {
 		stages {
 			stage('First') {
 				steps {
-					sh '''
-						echo "Step One from third commit "
-					'''
+					script {
+						env.EXECUTE="True"
+					}
+	
 				}
 			}
 
 
 			stage('Second') {
+				when {$EXECUTE='True'
+				}
 				steps {
 					sh '''
-						echo "Step Two from third commit"
-					'''
+						echo "Update Second Stage"
+					'''	
 				}
+			
 			} 
 
 			stage('Third') {
