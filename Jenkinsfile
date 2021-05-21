@@ -24,9 +24,12 @@ pipeline {
 			} 
 
 			stage('Third') {
+				when { environment name: 'EXECUTE', value: 'false'
+
+                                }
 				steps {
 					sh '''
-						echo "Step Three from third commit"
+						echo "Step three"
 					'''
 				}
 			}
