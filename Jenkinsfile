@@ -17,7 +17,7 @@ pipeline {
 				}
 				steps {
 					sh '''
-						echo "Update Second Stage"
+						echo "Update Second Stage and friends"
 					'''	
 				}
 			
